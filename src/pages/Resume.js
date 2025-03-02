@@ -9,7 +9,7 @@ class Resume extends Component {
             <div className={styles.Resume}>
                 <Header contents={header} />
                 <Intro contents={intro} />
-                <Skills contents={skills} />
+                {/* <Skills contents={skills} /> */}
                 {main.map((contents, index) => <Main key={index} contents={contents} />)}
                 <Footer contents={footer} />
             </div>

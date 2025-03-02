@@ -4,6 +4,7 @@ import styles from '../../styles.module.scss';
 class Right extends Component {
     render() {
         const content = this.props.content;
+        console.log(content.intro);
         const intro = content.intro.split("\n\n").map((line, index) => <p key={index}>{line}<br /></p>);
 
         return (

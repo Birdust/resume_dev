@@ -1,8 +1,8 @@
 @import '../../mixin.module.scss';
 
 .profile {
-    @include size(250px, 250px);
-    border-radius: 50%;
+    @include size(200px, 200px);
+    border-radius: 0%;
     @include if-mobile {
         margin: 1rem 0 2rem 0;
     }
