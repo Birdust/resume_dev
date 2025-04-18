@@ -12,15 +12,9 @@ export const intro = {
     intro: `
     안녕하세요! 개발자 김언지 입니다.
 
+    소통을 중요하게 생각하며 쉽게 이해할 수 있는 코드를 작성하는 것을 목표로 하고 있습니다.
 
-    Spring Boot와 NestJS를 사용해 REST API를 설계하고 개발하는 것을 좋아합니다.
-
-    시스템 배포와 운영을 위해 Docker와 Jenkins를 사용하며 CI/CD로 불필요한 작업을 줄이고자 합니다.
-
-
-    소통을 중요하게 생각하고 쉽게 이해할 수 있는 코드를 작성하는 것을 목표로 하고 있습니다.
-
-    보이지 않는 곳에서 일어나는 일들을 이해하고 사용자에게 편리한 서비스를 제공하는 것을 중요하게 생각합니다.
+    보이지 않는 곳에서 일어나는 일들을 이해하고, 사용자에게 편리한 서비스를 제공하기 위해 노력합니다.
 
     
 
@@ -111,11 +105,11 @@ export const experience = {
             link: "",
             desc: [
                 { main: `소켓 통신을 활용한 긴급차 우선 신호 시스템을 개발`, sub: []},
-                { main: `긴급차량 이동 경로 기반 특정 신호 요청 및 디지털 신호 제어 구현`, sub: [] },
+                { main: `긴급차량 이동 경로 기반 특정 신호 요청 및 디지털 신호기 제어 구현`, sub: [] },
                 { main: `실시간 다중 차량 경로 및 긴급차 위치 추적, 비동기 처리로 신호 변경 자동화`, sub: [] },
                 { main: "통신 데이터 DB 저장, 이동 경로 로그 API로 관제 센터 데이터 조회 지원", sub: [] },
                 { main: "Jenkins 활용 배포 자동화 및 CI/CD 프로세스 개선", sub: [] },
-                { main: "Nest.js 기반 REST API 설계 및 개발", sub: [] },
+                { main: "Nest.js 기반 REST API 설계 및 개발 기술 습득", sub: [] },
             ],
             keywords: ["NestJS", "WebSocket", "PostgreSQL", "Python", "Jenkins", "Docker"],
             folder: "",
@@ -136,7 +130,7 @@ export const experience = {
             ],
             keywords: ["OpenCV", "ROS", "Gazebo", "Jetson Xavier NX", "Python", "Ubuntu 20.04"],
             folder: "rnd",
-            images: [ ],
+            images: ["drone1.png","drone2.png","drone3.png", "drone4.png"],
             pdfs: []
         },
     ],
@@ -189,7 +183,7 @@ export const awards = {
         ],
             keywords: ["Spring Boot", "Spring JPA", "MySQL"],
             folder: "capstone",
-            images: [],
+            images: ["stone1.png","stone2.png","stone3.png","stone4.png"],
             pdfs: []
         },
         {

@@ -1,0 +1,23 @@
+.footerAboutMe {
+  padding: 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.bigText {
+  font-size: 24px; /* 전체 텍스트 크기 */
+  font-weight: bold; /* 전체 볼드체 */
+  color: #333;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold; /* 볼드체 유지 */
+  font-size: inherit; /* .bigText의 font-size 상속 */
+}
+
+.link:hover {
+  text-decoration: underline;
+}
