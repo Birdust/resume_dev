@@ -6,10 +6,19 @@ class Right extends Component {
     render() {
         const content = this.props.content;
         const paragraphs = content.intro
-            .split("\n\n")
-            .map((line) => line.trim())
-            .filter((line) => line.length)
-            .map((line, index) => <p key={index} className={intro.paragraph}>{line}</p>);
+            .split(/\n[ \t]*\n/)
+            .map((block) => block.trim())
+            .filter((block) => block.length)
+            .map((block, index) => {
+                const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+                return (
+                    <p key={index} className={intro.paragraph}>
+                        {lines.map((line, j) => (
+                            <span key={j}>{line}{j < lines.length - 1 && <br />}</span>
+                        ))}
+                    </p>
+                );
+            });
 
         return (
             <div className={styles.Right}>
