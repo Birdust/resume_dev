@@ -5,7 +5,11 @@ import intro from './intro.module.scss';
 class Right extends Component {
     render() {
         const content = this.props.content;
-        const paragraphs = content.intro.split("\n\n").map((line, index) => <p key={index}>{line}<br /></p>);
+        const paragraphs = content.intro
+            .split("\n\n")
+            .map((line) => line.trim())
+            .filter((line) => line.length)
+            .map((line, index) => <p key={index} className={intro.paragraph}>{line}</p>);
 
         return (
             <div className={styles.Right}>
