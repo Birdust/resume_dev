@@ -111,7 +111,7 @@ export const experience = {
             link: "",
             desc: [
                 { main: "교통관제 대화형 AI 구축 (자연어 질의 기반 데이터 조회)", sub: [
-                    "운영 중인 교통관제 API에 MCP·Gemini Function Calling으로 한국어 질의 조회·설명 기능 신규 개발",
+                    "운영 중인 교통관제 API에 MCP·LLM Function Calling으로 한국어 질의(NLQ) 조회·설명 기능 신규 개발",
                     "'AI는 조회·설명만, 제어·변경 불가' 원칙 — 읽기 전용 DB 계정·질의 검증·접근 인증 다층 설계",
                     "단일 조회문만 허용·위험 구문 차단·테이블 화이트리스트, 보안 유닛 테스트 28건·CI 구성",
                 ] },
@@ -121,7 +121,7 @@ export const experience = {
                     "PyQt5 데스크톱 모니터링·Flask 웹 중계 서버·설비 자산 관리 REST API 개발",
                 ] },
             ],
-            keywords: ["NestJS", "MCP / Gemini", "PostgreSQL", "Python", "PyQt5", "Flask"],
+            keywords: ["NestJS", "NLQ", "MCP", "LLM Function Calling", "PostgreSQL", "Python", "PyQt5", "Flask"],
             folder: "",
             images: [],
             pdfs: []
