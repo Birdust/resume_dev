@@ -1,11 +1,17 @@
-$black: #000;
+$black: #1a1a1a;
 $darkgray: #333;
 $gray: #808080;
 $silver: #CCC;
 $smoke: #f0f0f0;
 $white: #fff;
 $modal-highlight: #FFC745;
-$footer-link: #007bff;
+$footer-link: #6b6250;
+
+// Accent palette — 은은한 뉴트럴 베이지/토프 (파란색 없음)
+$accent: #b9ad97;       // 베이지 라인/바
+$accent-dark: #6b6250;  // 짙은 토프 (텍스트)
+$accent-soft: #f4efe6;  // 옅은 베이지 (칩 배경)
+$accent-line: #e4dccb;  // 베이지 보더
 
 @mixin location($top, $right, $bottom, $left) {
     top: $top;

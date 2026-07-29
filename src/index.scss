@@ -19,7 +19,9 @@ h1 {
 }
 
 h2 {
-    @include font($gray, normal, 300, 2rem);
+    @include font($darkgray, normal, 500, 1.8rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 h3 {

@@ -7,8 +7,24 @@
     line-height: 2;
     .Container {
         .Subject {
-            border-bottom: 2px solid $silver;
-            margin-bottom: 2rem;
+            position: relative;
+            border-bottom: 1px solid $silver;
+            margin-bottom: 2.4rem;
+            padding-bottom: 0.4rem;
+            h3 {
+                text-align: left;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                @include font($darkgray, normal, 500, 2.2rem);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                @include size(48px, 3px);
+                background-color: $accent-dark;
+            }
         }
         .Wrapper {
             display: flex;
@@ -24,6 +40,10 @@
                     padding-right: 0;
                 }
                 padding-right: 5%;
+                h4 {
+                    color: $darkgray;
+                    letter-spacing: 0.02em;
+                }
             }
             .Right {
                 @include media-width(100%, 72%);
@@ -38,13 +58,17 @@
                             padding-inline-start: 20px;
                         }
                         padding-inline-start: 40px;
-                        .foldable {
-                            list-style: none;
-                            details {
-                                margin-left: -15px;
-                                summary:hover {
-                                    @include font($black, normal, 400, 1.5rem);
-                                    cursor: pointer;
+                        .descItem {
+                            margin-bottom: 0.7rem;
+                            .descTitle {
+                                @include font($black, normal, 600, 1.55rem);
+                            }
+                            ul {
+                                padding-inline-start: 18px;
+                                margin-top: 0.2rem;
+                                li {
+                                    @include font($darkgray, normal, 300, 1.45rem);
+                                    line-height: 1.75;
                                 }
                             }
                         }
@@ -52,17 +76,24 @@
                 }
                 .keywords {
                     @include media-content-align;
+                    margin-top: 0.6rem;
                     span {
                         display: inline-block;
-                        background-color: $smoke;
+                        background-color: $accent-soft;
+                        border: 1px solid $accent-line;
+                        border-radius: 999px;
                         @include if-mobile {
-                            margin: 0.5rem;
+                            margin: 0.4rem;
                         }
-                        margin: 0.5rem 1rem 0.5rem 0;
-                        padding: 1px 6px;
+                        margin: 0.4rem 0.8rem 0.4rem 0;
+                        padding: 2px 12px;
                         line-height: normal;
-                        @include font($darkgray, normal, 300, 1.5rem);
-                        box-shadow: 0 1px 3px 0 $gray;
+                        @include font($accent-dark, normal, 400, 1.35rem);
+                        transition: 0.2s;
+                        &:hover {
+                            background-color: $accent-dark;
+                            color: $white;
+                        }
                     }
                 }
                 .images, .pdfs {
