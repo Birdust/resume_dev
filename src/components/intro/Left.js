@@ -8,7 +8,7 @@ class Left extends Component {
 
         return (
             <div className={styles.Left} style={{ lineHeight: 0 }}>
-                <img className={intro.profile} src={content.profile} alt='alt_profile'></img>
+                <img className={intro.profile} src={`${process.env.PUBLIC_URL}/${content.profile}`} alt='alt_profile'></img>
             </div>
         );
     }
