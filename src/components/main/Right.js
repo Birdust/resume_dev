@@ -25,8 +25,9 @@ class Right extends Component {
             if (desc.sub.length) {
                 const subs = <ul>{desc.sub.map((sub, index) => <li key={index}>{sub}</li>)}</ul>
                 return (
-                    <li key={index} className={styles.foldable}>
-                        <details><summary>{desc.main}</summary>{subs}</details>
+                    <li key={index} className={styles.descItem}>
+                        <span className={styles.descTitle}>{desc.main}</span>
+                        {subs}
                     </li>
                 )
             }
