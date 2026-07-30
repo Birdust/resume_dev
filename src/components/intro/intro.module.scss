@@ -13,6 +13,17 @@
     }
 }
 
+.paragraph {
+    @include font($darkgray, normal, 300, 1.55rem);
+    line-height: 1.9;
+    word-break: keep-all;      // 한국어 어절 단위 줄바꿈
+    overflow-wrap: break-word;
+    margin-bottom: 1.2rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .profile {
     @include size(210px, 265px); // 증명사진 3:4 세로 비율
     object-fit: cover;
