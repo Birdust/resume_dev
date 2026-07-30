@@ -79,7 +79,8 @@ export const research = {
             period: "Database / DevOps",
             link: "",
             desc: [{ main: "PostgreSQL — 인덱스·쿼리 튜닝, 동시성 처리, 마이그레이션", sub: [] }, { main: "Docker, Jenkins, GitHub Actions (CI/CD)", sub: [] },
-            { main: "Linux 서버 운영·배포 (systemd, PM2, 오프라인 소스 빌드)", sub: [] } ],
+            { main: "Linux 서버 운영·배포 (systemd, PM2, 오프라인 소스 빌드)", sub: [] },
+            { main: "모니터링·관측성 (Prometheus, Grafana)", sub: [] } ],
             keywords: [],
             folder: "",
             images: [],
@@ -115,6 +116,12 @@ export const experience = {
                     "'AI는 조회·설명만, 제어·변경 불가' 원칙 — 읽기 전용 DB 계정·질의 검증·접근 인증 다층 설계",
                     "단일 조회문만 허용·위험 구문 차단·테이블 화이트리스트, 보안 유닛 테스트 28건·CI 구성",
                 ] },
+                { main: "긴급차 우선신호 시스템 개편 (Node.js → Python)", sub: [
+                    "구형 Node.js를 Python 비동기 서버로 전면 개편, 단일 → 최대 5대 동시 운행 확장",
+                    "위경도→평면좌표 변환·진입 방향 4방위 분류·45m 반경 기반 신호 제어 경로 탐색 로직 설계",
+                    "긴급 제어 명령이 0건 전송되던 치명 오류를 좌표 처리 단계까지 추적해 해결, 실주행 경로 검증",
+                    "인터넷 없는 CentOS 7에 Python 소스 빌드로 오프라인 배포, PM2 자동 재기동",
+                ] },
                 { main: "고속철도 열차제어설비(TFM) 모니터링·시뮬레이션 통합 개발", sub: [
                     "입출력 상태 실시간 수집·모니터링, 실장비 없이 전체를 검증하는 시뮬레이션 환경까지 단독 구축",
                     "연동장치를 대신하는 시뮬레이터를 공유 메모리 기반으로 구현",
@@ -140,12 +147,6 @@ export const experience = {
                 { main: "실시간 신호제어 소켓 서버 동시성 문제 해결", sub: [
                     "다중 교차로 제어 시 고유번호 충돌·저장 실패를, 원자적 쿼리 통합·락 직렬화·재시도로 제거",
                     "요청별 연결 격리로 한 작업의 실패가 다른 작업에 번지지 않도록 처리",
-                ] },
-                { main: "긴급차 우선신호 시스템 개편 (Node.js → Python)", sub: [
-                    "구형 Node.js를 Python 비동기 서버로 전면 개편, 단일 → 최대 5대 동시 운행 확장",
-                    "위경도→평면좌표 변환·진입 방향 4방위 분류·45m 반경 기반 신호 제어 경로 탐색 로직 설계",
-                    "긴급 제어 명령이 0건 전송되던 치명 오류를 좌표 처리 단계까지 추적해 해결, 실주행 경로 검증",
-                    "인터넷 없는 CentOS 7에 Python 소스 빌드로 오프라인 배포, PM2 자동 재기동",
                 ] },
                 { main: "좌회전 감응 신호 시스템 (영상 AI)", sub: [
                     "엣지 장비에 YOLO로 좌회전 대기 차량 실시간 인식, 안성·장흥 실도로 배포",
@@ -174,10 +175,11 @@ export const experience = {
                 { main: "긴급차 우선신호 시스템 개발", sub: [
                     "소켓 통신으로 신호제어기와 연동, 긴급차 경로 상의 교차로 신호를 우선 제어",
                     "긴급차 실시간 위치 추적·비동기 신호 자동화, 경로 로그 API로 관제센터 조회 지원",
+                    "Prometheus·Grafana로 신호 제어·차량 상태 실시간 모니터링 구성",
                     "Jenkins 기반 배포 자동화로 CI/CD 프로세스 개선",
                 ] },
             ],
-            keywords: ["NestJS", "WebSocket", "PostgreSQL", "Python", "Jenkins", "Docker"],
+            keywords: ["NestJS", "WebSocket", "PostgreSQL", "Python", "Prometheus", "Grafana", "Jenkins", "Docker"],
             folder: "",
             images: [],
             pdfs: []
