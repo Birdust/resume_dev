@@ -65,7 +65,7 @@ export const research = {
             subtitle: "",
             period: "Backend",
             link: "",
-            desc: [{ main: "TypeScript, Python, JavaScript, SQL", sub: [] }, { main: "NestJS, TypeORM, Flask, REST API", sub: [] },
+            desc: [{ main: "TypeScript, Java, Python, JavaScript, SQL", sub: [] }, { main: "NestJS, Spring Boot, TypeORM, Flask, REST API", sub: [] },
             { main: "Socket.IO, WebSocket, asyncio", sub: [] } ],
             keywords: [],
             folder: "",
@@ -115,6 +115,11 @@ export const experience = {
                     "'AI는 조회·설명만, 제어·변경 불가' 원칙 — 읽기 전용 DB 계정·질의 검증·접근 인증 다층 설계",
                     "단일 조회문만 허용·위험 구문 차단·테이블 화이트리스트, 보안 유닛 테스트 28건·CI 구성",
                 ] },
+                { main: "교통관제 API Spring Boot 이관·현행화 (NestJS → Java/Spring Boot)", sub: [
+                    "두 구현의 응답을 자동 대조하는 도구를 먼저 구축해, 일치율 26%(9/35) → 97%(34/35)로 정렬",
+                    "지원 종료 스택(JDK 8) 최신화(추정 1~2주 → 1일), 비밀번호 해시 무인증 노출 등 잠재 결함 발견·수정",
+                    "Flyway 마이그레이션·Testcontainers 기반 회귀 검증",
+                ] },
                 { main: "긴급차 우선신호 시스템 개편 (Node.js → Python)", sub: [
                     "구형 Node.js를 Python 비동기 서버로 전면 개편, 단일 → 최대 5대 동시 운행 확장",
                     "병원으로 가는 고정 경로만 지원하던 것을, 임의 목적지·모든 긴급상황에 대응하는 범용 경로 제어로 확장",
@@ -128,7 +133,7 @@ export const experience = {
                     "PyQt5 데스크톱 모니터링·Flask 웹 중계 서버·설비 자산 관리 REST API 개발",
                 ] },
             ],
-            keywords: ["NestJS", "NLQ", "MCP", "LLM Function Calling", "PostgreSQL", "Python", "PyQt5", "Flask"],
+            keywords: ["NestJS", "Java", "Spring Boot", "NLQ", "MCP", "PostgreSQL", "Python", "PyQt5", "Flask"],
             folder: "",
             images: [],
             pdfs: []
@@ -140,13 +145,13 @@ export const experience = {
             link: "",
             desc: [
                 { main: "교통관제 백엔드 조회 성능 개선", sub: [
-                    "20초 넘게 타임아웃 나던 기간별 조회를 인덱스 재설계로 1초 이내로 단축",
-                    "문자열 LIKE(인덱스 미사용) 쿼리를 범위 조건으로 재작성, (교차로, 시간) 복합 인덱스 설계로 풀스캔 제거",
-                    "오래된 로그 월별 백업·삭제로 테이블 비대화 예방",
+                    "2,890만 행 기준 조회 11.3초 → 78ms(약 144배) — 인덱스 미활용 쿼리 재작성 + (교차로, 시간) 복합 인덱스 설계",
+                    "행마다 왕복하던 조회(개별 2ms라 슬로우쿼리 미탐지)를 일괄 조회로 재설계 — 쿼리 2,161개 → 3개, 4.4초 → 11ms",
+                    "쿼리 수정 없이 인덱스만 추가하면 오히려 느려짐을 실행계획으로 확인·근거화",
                 ] },
-                { main: "실시간 신호제어 소켓 서버 동시성 문제 해결", sub: [
-                    "다중 교차로 제어 시 고유번호 충돌·저장 실패를, 원자적 쿼리 통합·락 직렬화·재시도로 제거",
-                    "요청별 연결 격리로 한 작업의 실패가 다른 작업에 번지지 않도록 처리",
+                { main: "실시간 신호제어 동시성 문제 해결 — 동시 40건 중 33건 유실 → 0건", sub: [
+                    "다중 제어 명령 충돌·유실을 DB 락 기반 공통 함수로 재설계 (오류 없이 정상 응답하며 앞 기록을 덮어쓰던 문제)",
+                    "같은 결함이 API 서버 17곳에 존재함을 발견해 일괄 수정, 개선 전/후를 동일 DB에 붙여 A/B 비교로 검증",
                 ] },
                 { main: "좌회전 감응 신호 시스템 (영상 AI)", sub: [
                     "엣지 장비에 YOLO로 좌회전 대기 차량 실시간 인식, 안성·장흥 실도로 배포",
