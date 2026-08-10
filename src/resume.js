@@ -65,9 +65,8 @@ export const research = {
             subtitle: "",
             period: "Backend",
             link: "",
-            desc: [{ main: "TypeScript, Python, JavaScript, SQL", sub: [] }, { main: "NestJS, TypeORM, Flask, REST API", sub: [] },
-            { main: "Socket.IO, WebSocket 기반 실시간 통신", sub: [] },
-            { main: "비동기·동시성 처리 (asyncio, 멀티스레드, 락·재시도)", sub: [] } ],
+            desc: [{ main: "TypeScript, Java, Python, JavaScript, SQL", sub: [] }, { main: "NestJS, Spring Boot, TypeORM, Flask, REST API", sub: [] },
+            { main: "Socket.IO, WebSocket, asyncio", sub: [] } ],
             keywords: [],
             folder: "",
             images: [],
@@ -78,8 +77,9 @@ export const research = {
             subtitle: "",
             period: "Database / DevOps",
             link: "",
-            desc: [{ main: "PostgreSQL — 인덱스·쿼리 튜닝, 동시성 처리, 마이그레이션", sub: [] }, { main: "Docker, Jenkins, GitHub Actions (CI/CD)", sub: [] },
-            { main: "Linux 서버 운영·배포 (systemd, PM2, 오프라인 소스 빌드)", sub: [] } ],
+            desc: [{ main: "PostgreSQL — 인덱스·쿼리 튜닝, 동시성 처리, 마이그레이션", sub: [] }, { main: "Docker, Jenkins, GitHub Actions", sub: [] },
+            { main: "Linux, systemd, PM2", sub: [] },
+            { main: "Prometheus, Grafana", sub: [] } ],
             keywords: [],
             folder: "",
             images: [],
@@ -90,8 +90,8 @@ export const research = {
             subtitle: " ",
             period: "AI / Embedded",
             link: "",
-            desc: [{ main: "LLM 연동(Function Calling), 데이터 접근 보안 설계", sub: [] }, { main: "영상 AI(YOLO), OpenCV, ROS", sub: [] },
-            { main: "임베디드 리눅스, 산업용 시리얼/네트워크 통신, Jetson Nano, Raspberry Pi", sub: [] } ],
+            desc: [{ main: "MCP, LLM Function Calling, NLQ", sub: [] }, { main: "YOLO, OpenCV, ROS", sub: [] },
+            { main: "임베디드 리눅스, 시리얼 통신, Jetson Nano, Raspberry Pi", sub: [] } ],
             keywords: [],
             folder: "",
             images: [],
@@ -110,18 +110,26 @@ export const experience = {
             period: "2025.12 ~ 현재",
             link: "",
             desc: [
-                { main: "교통관제 대화형 AI 구축 (자연어 질의 기반 데이터 조회)", sub: [
-                    "운영 중인 교통관제 API에 MCP·LLM Function Calling으로 한국어 질의(NLQ) 조회·설명 기능 신규 개발",
-                    "'AI는 조회·설명만, 제어·변경 불가' 원칙 — 읽기 전용 DB 계정·질의 검증·접근 인증 다층 설계",
-                    "단일 조회문만 허용·위험 구문 차단·테이블 화이트리스트, 보안 유닛 테스트 28건·CI 구성",
+                { main: "교통관제 대화형 AI 구축 (자연어 질의 기반 조회)", sub: [
+                    "MCP·LLM Function Calling으로 한국어 질의(NLQ) 조회·설명 기능 신규 개발",
+                    "AI는 조회·설명만, 제어·변경 불가 — 읽기 전용 계정·질의 검증·인증 다층 보안 설계",
+                ] },
+                { main: "교통관제 API Spring Boot 이관 (NestJS → Java)", sub: [
+                    "응답 자동 대조 도구를 먼저 구축해 두 구현 일치율 26% → 97% 정렬",
+                    "지원 종료 스택(JDK 8) 최신화, 비밀번호 해시 무인증 노출 등 잠재 결함 발견·수정",
+                ] },
+                { main: "긴급차 우선신호 시스템 개편 (Node.js → Python)", sub: [
+                    "구형 Node.js를 Python 비동기 서버로 전면 개편, 단일 → 최대 5대 동시 운행",
+                    "병원행 고정 경로만 되던 것을 임의 목적지·모든 긴급상황 대응으로 범용화",
+                    "좌표 처리 로직 리팩토링, 실주행 경로로 검증",
+                    "Prometheus·Grafana·AlertManager로 실시간 모니터링·알람 인프라 구축",
                 ] },
                 { main: "고속철도 열차제어설비(TFM) 모니터링·시뮬레이션 통합 개발", sub: [
-                    "입출력 상태 실시간 수집·모니터링, 실장비 없이 전체를 검증하는 시뮬레이션 환경까지 단독 구축",
-                    "연동장치를 대신하는 시뮬레이터를 공유 메모리 기반으로 구현",
-                    "PyQt5 데스크톱 모니터링·Flask 웹 중계 서버·설비 자산 관리 REST API 개발",
+                    "입출력 상태 실시간 모니터링 + 실장비 없이 검증하는 시뮬레이터 구축",
+                    "PyQt5 데스크톱·Flask 웹 중계 서버·설비 자산 관리 REST API 개발",
                 ] },
             ],
-            keywords: ["NestJS", "NLQ", "MCP", "LLM Function Calling", "PostgreSQL", "Python", "PyQt5", "Flask"],
+            keywords: ["NestJS", "Java", "Spring Boot", "NLQ", "MCP", "PostgreSQL", "Python", "PyQt5", "Flask", "Prometheus", "Grafana"],
             folder: "",
             images: [],
             pdfs: []
@@ -133,19 +141,16 @@ export const experience = {
             link: "",
             desc: [
                 { main: "교통관제 백엔드 조회 성능 개선", sub: [
-                    "시간 컬럼을 문자열 LIKE로 검색해 인덱스를 못 타던 쿼리를 범위 조건으로 재작성",
-                    "(교차로, 시간) 복합 인덱스 설계로 풀스캔 제거, 종료일 경계 누락 결함 동반 수정",
-                    "오래된 로그 월별 CSV 백업·삭제·감사 로그로 테이블 비대화 예방",
+                    "2,890만 행 조회 11.3초 → 78ms(약 144배) — 인덱스 미활용 쿼리 재작성 + 복합 인덱스 설계",
+                    "행마다 왕복하던 조회를 일괄 조회로 재설계 — 쿼리 2,161개 → 3개, 4.4초 → 11ms",
                 ] },
-                { main: "실시간 신호제어 소켓 서버 동시성 문제 해결", sub: [
-                    "다중 교차로 제어 시 고유번호 충돌·저장 실패를, 원자적 쿼리 통합·락 직렬화·재시도로 제거",
-                    "요청별 연결 격리로 한 작업의 실패가 다른 작업에 번지지 않도록 처리",
+                { main: "실시간 신호제어 동시성 문제 해결 — 동시 40건 중 33건 유실 → 0건", sub: [
+                    "다중 제어 명령 충돌·유실을 DB 락 기반 공통 함수로 재설계 (정상 응답하며 앞 기록을 덮어쓰던 문제)",
+                    "같은 결함이 API 서버 17곳에 존재함을 발견해 일괄 수정, A/B 비교로 검증",
                 ] },
-                { main: "긴급차 우선신호 시스템 개편 (Node.js → Python)", sub: [
-                    "구형 Node.js를 Python 비동기 서버로 전면 개편, 단일 → 최대 5대 동시 운행 확장",
-                    "위경도→평면좌표 변환·진입 방향 4방위 분류·45m 반경 기반 신호 제어 경로 탐색 로직 설계",
-                    "긴급 제어 명령이 0건 전송되던 치명 오류를 좌표 처리 단계까지 추적해 해결, 실주행 경로 검증",
-                    "인터넷 없는 CentOS 7에 Python 소스 빌드로 오프라인 배포, PM2 자동 재기동",
+                { main: "긴급차 우선신호 시스템 개발", sub: [
+                    "소켓 통신으로 신호제어기와 연동, 긴급차 경로 상 교차로 신호 우선 제어",
+                    "실시간 위치 추적·비동기 신호 자동화, 경로 로그 API로 관제센터 조회 지원, Jenkins 기반 CI/CD",
                 ] },
                 { main: "좌회전 감응 신호 시스템 (영상 AI)", sub: [
                     "엣지 장비에 YOLO로 좌회전 대기 차량 실시간 인식, 안성·장흥 실도로 배포",
@@ -160,24 +165,7 @@ export const experience = {
                     "웹 화면엔 대표값만 실시간 표시해 표시 부하 절감",
                 ] },
             ],
-            keywords: ["NestJS", "TypeORM", "PostgreSQL", "Python", "YOLO", "Jetson Nano", "Flask", "임베디드 리눅스"],
-            folder: "",
-            images: [],
-            pdfs: []
-        },
-        {
-            title: "동부 ICT",
-            subtitle: "인턴 연구원 · 성남시 ITS 구축사업",
-            period: "2024.08 ~ 2024.12",
-            link: "",
-            desc: [
-                { main: "긴급차 우선신호 시스템 개발", sub: [
-                    "소켓 통신으로 신호제어기와 연동, 긴급차 경로 상의 교차로 신호를 우선 제어",
-                    "긴급차 실시간 위치 추적·비동기 신호 자동화, 경로 로그 API로 관제센터 조회 지원",
-                    "Jenkins 기반 배포 자동화로 CI/CD 프로세스 개선",
-                ] },
-            ],
-            keywords: ["NestJS", "WebSocket", "PostgreSQL", "Python", "Jenkins", "Docker"],
+            keywords: ["NestJS", "WebSocket", "TypeORM", "PostgreSQL", "Python", "YOLO", "Jetson Nano", "Flask", "Jenkins", "임베디드 리눅스"],
             folder: "",
             images: [],
             pdfs: []
