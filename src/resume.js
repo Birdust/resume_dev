@@ -129,7 +129,7 @@ export const experience = {
                     "PyQt5 데스크톱·Flask 웹 중계 서버·설비 자산 관리 REST API 개발",
                 ] },
             ],
-            keywords: ["NestJS", "Java", "Spring Boot", "NLQ", "MCP", "PostgreSQL", "Python", "PyQt5", "Flask"],
+            keywords: ["NestJS", "Java", "Spring Boot", "NLQ", "MCP", "PostgreSQL", "Python", "PyQt5", "Flask", "Prometheus", "Grafana"],
             folder: "",
             images: [],
             pdfs: []
@@ -141,13 +141,16 @@ export const experience = {
             link: "",
             desc: [
                 { main: "교통관제 백엔드 조회 성능 개선", sub: [
-                    "2,890만 행 기준 조회 11.3초 → 78ms(약 144배) — 인덱스 미활용 쿼리 재작성 + (교차로, 시간) 복합 인덱스 설계",
-                    "행마다 왕복하던 조회(개별 2ms라 슬로우쿼리 미탐지)를 일괄 조회로 재설계 — 쿼리 2,161개 → 3개, 4.4초 → 11ms",
-                    "쿼리 수정 없이 인덱스만 추가하면 오히려 느려짐을 실행계획으로 확인·근거화",
+                    "2,890만 행 조회 11.3초 → 78ms(약 144배) — 인덱스 미활용 쿼리 재작성 + 복합 인덱스 설계",
+                    "행마다 왕복하던 조회를 일괄 조회로 재설계 — 쿼리 2,161개 → 3개, 4.4초 → 11ms",
                 ] },
                 { main: "실시간 신호제어 동시성 문제 해결 — 동시 40건 중 33건 유실 → 0건", sub: [
-                    "다중 제어 명령 충돌·유실을 DB 락 기반 공통 함수로 재설계 (오류 없이 정상 응답하며 앞 기록을 덮어쓰던 문제)",
-                    "같은 결함이 API 서버 17곳에 존재함을 발견해 일괄 수정, 개선 전/후를 동일 DB에 붙여 A/B 비교로 검증",
+                    "다중 제어 명령 충돌·유실을 DB 락 기반 공통 함수로 재설계 (정상 응답하며 앞 기록을 덮어쓰던 문제)",
+                    "같은 결함이 API 서버 17곳에 존재함을 발견해 일괄 수정, A/B 비교로 검증",
+                ] },
+                { main: "긴급차 우선신호 시스템 개발", sub: [
+                    "소켓 통신으로 신호제어기와 연동, 긴급차 경로 상 교차로 신호 우선 제어",
+                    "실시간 위치 추적·비동기 신호 자동화, 경로 로그 API로 관제센터 조회 지원, Jenkins 기반 CI/CD",
                 ] },
                 { main: "좌회전 감응 신호 시스템 (영상 AI)", sub: [
                     "엣지 장비에 YOLO로 좌회전 대기 차량 실시간 인식, 안성·장흥 실도로 배포",
@@ -162,25 +165,7 @@ export const experience = {
                     "웹 화면엔 대표값만 실시간 표시해 표시 부하 절감",
                 ] },
             ],
-            keywords: ["NestJS", "TypeORM", "PostgreSQL", "Python", "YOLO", "Jetson Nano", "Flask", "임베디드 리눅스"],
-            folder: "",
-            images: [],
-            pdfs: []
-        },
-        {
-            title: "동부 ICT",
-            subtitle: "인턴 연구원 · 성남시 ITS 구축사업",
-            period: "2024.08 ~ 2024.12",
-            link: "",
-            desc: [
-                { main: "긴급차 우선신호 시스템 개발", sub: [
-                    "소켓 통신으로 신호제어기와 연동, 긴급차 경로 상의 교차로 신호를 우선 제어",
-                    "긴급차 실시간 위치 추적·비동기 신호 자동화, 경로 로그 API로 관제센터 조회 지원",
-                    "Prometheus·Grafana로 신호 제어·차량 상태 실시간 모니터링 구성",
-                    "Jenkins 기반 배포 자동화로 CI/CD 프로세스 개선",
-                ] },
-            ],
-            keywords: ["NestJS", "WebSocket", "PostgreSQL", "Python", "Prometheus", "Grafana", "Jenkins", "Docker"],
+            keywords: ["NestJS", "WebSocket", "TypeORM", "PostgreSQL", "Python", "YOLO", "Jetson Nano", "Flask", "Jenkins", "임베디드 리눅스"],
             folder: "",
             images: [],
             pdfs: []
