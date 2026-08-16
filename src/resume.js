@@ -172,14 +172,19 @@ export const experience = {
         },
         {
             title: "학부 연구생 (R&D)",
-            subtitle: "센서 융합 기반 자율비행 배송드론 시스템",
+            subtitle: "센서 융합 기반 자율비행 배송드론 시스템 · 영상 인식(자율 착륙) 담당",
             period: "2023.05 ~ 2024.05",
             link: "",
             desc: [
-                { main: "ROS·Gazebo 기반 드론 시뮬레이션 환경 구축", sub: [] },
-                { main: "YOLO·OpenCV 장애물 탐지, 시맨틱 세그멘테이션 기반 안전 착륙지 탐지 알고리즘 개발", sub: [] },
+                { main: "ROS·Gazebo 기반 드론 시뮬레이션 환경 구축 및 영상 기반 장애물 탐지", sub: [] },
+                { main: "자율 착륙 알고리즘 개발 (영상 인식 파트 담당)", sub: [
+                    "시맨틱 세그멘테이션으로 드론 카메라 영상의 착륙 후보 영역을 픽셀 단위 분할",
+                    "세그멘테이션 결과를 OpenCV로 변환·그리드 분할 후, 그리드별 안정성 점수로 착륙 후보 선정",
+                    "포인트 클라우드로 착륙 후보 지점의 평탄도를 검증해 안전한 평탄 영역 도출",
+                    "항공 영상 특성을 반영한 Grid division으로 실시간 처리 최적화, 최종 안전 착륙 지점 도출",
+                ] },
             ],
-            keywords: ["OpenCV", "ROS", "Gazebo", "Jetson Xavier NX", "Python"],
+            keywords: ["Semantic Segmentation", "OpenCV", "Point Cloud", "ROS", "Gazebo", "Jetson Xavier NX", "Python"],
             folder: "rnd",
             images: [ ],
             pdfs: []
