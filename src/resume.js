@@ -307,6 +307,23 @@ export const certificate = {
     ],
 };
 
-export const footer = { updated: "2026. 07. 29." };
+export const language = {
+    subject: "Language",
+    contents: [
+        {
+            title: "TOEIC Speaking — IH (Intermediate High)",
+            subtitle: "ETS (YBM)",
+            period: "2026.08.13",
+            link: "",
+            desc: [],
+            keywords: [],
+            folder: "",
+            images: [],
+            pdfs: []
+        },
+    ],
+};
 
-export const main = [research, experience, awards, education, certificate] // projects 잠시 주석처리
+export const footer = { updated: "2026. 08. 13." };
+
+export const main = [research, experience, awards, education, certificate, language] // projects 잠시 주석처리
