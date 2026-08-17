@@ -126,7 +126,7 @@ export const experience = {
                 ] },
                 { main: "고속철도 열차제어설비(TFM) 모니터링·시뮬레이션 통합 개발", sub: [
                     "입출력 상태 실시간 모니터링 + 실장비 없이 검증하는 시뮬레이터 구축",
-                    "PyQt5 데스크톱·Flask 웹 중계 서버·설비 자산 관리 REST API 개발",
+                    "PyQt5 데스크톱·Flask 웹 중계 서버·설비 정보 관리 REST API 개발",
                 ] },
             ],
             keywords: ["NestJS", "Java", "Spring Boot", "NLQ", "MCP", "PostgreSQL", "Python", "PyQt5", "Flask", "Prometheus", "Grafana"],
@@ -158,11 +158,13 @@ export const experience = {
                 ] },
                 { main: "철도 신호용 계전기 시험기 개발", sub: [
                     "산업용 보드(Allwinner T507)에 Ubuntu·Python 직접 빌드, 계전기 6종 저항 자동 측정·양불 판정 엔진 구현",
-                    "무인 키오스크 운영, PC·네트워크 없이 USB만으로 안전 업데이트·실패 시 자동 롤백 설계",
+                    "PC·네트워크 없이 USB만으로 안전 업데이트·실패 시 자동 롤백 설계",
                 ] },
                 { main: "선로전환기 전환력 측정기 개발", sub: [
-                    "센서 원시 신호를 실제 전환력 값(kgf)으로 변환, 초당 100회 수집 데이터 저장",
-                    "웹 화면엔 대표값만 실시간 표시해 표시 부하 절감",
+                    "계측보드와 시리얼 통신·오류 검증으로 데이터 신뢰성 확보",
+                    "센서 원시 신호를 실제 전환력 값(kgf)으로 보정·변환, 장비 모델별 보정값을 DB로 관리해 장비 교체 시 값만 교체",
+                    "초당 100회 수집 데이터의 수신·저장·전송을 병렬 처리 구조로 분리해 안정 동작, 웹엔 대표값만 실시간 표시",
+                    "로그 조회·설정 관리 API 및 라즈베리파이 현장 배포 구성",
                 ] },
             ],
             keywords: ["NestJS", "WebSocket", "TypeORM", "PostgreSQL", "Python", "YOLO", "Jetson Nano", "Flask", "Jenkins", "임베디드 리눅스"],
