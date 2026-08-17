@@ -9,7 +9,7 @@ export const header = {
 export const intro = {
     subject: "Introduce",
     profile: "profile2.jpg",
-    headline: "안전이 중요한 실시간 시스템에서, 조용히 실패하는 결함까지 끝까지 찾아내는 개발자",
+    headline: "깊이 파고들어 오래가는 시스템을 만드는 개발자",
     intro: `
     주어진 기능을 구현하는 데 그치지 않습니다. 운영 중인 시스템이 왜 느리고 문제가 생기는지 스스로 질문을 던지고
     원인을 근본까지 추적해 다시 설계합니다.
