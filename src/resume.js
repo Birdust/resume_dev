@@ -384,6 +384,6 @@ export const language = {
     ],
 };
 
-export const footer = { updated: "2026. 08. 13." };
+export const footer = { updated: "2026. 08. 29." };
 
 export const main = [research, experience, awards, education, certificate, language] // projects 잠시 주석처리
