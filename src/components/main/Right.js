@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
+import ProjectDetail from '../projectdetail/ProjectDetail';
 import styles from '../../styles.module.scss';
 
 class Right extends Component {
@@ -9,7 +10,16 @@ class Right extends Component {
         this.state = {
             index: null,
             hasModal: false,
+            detail: null,
         };
+    }
+
+    openDetail = (detail) => {
+        this.setState({ detail: detail });
+    }
+
+    closeDetail = () => {
+        this.setState({ detail: null });
     }
 
     controlModal = (index) => {
@@ -22,11 +32,27 @@ class Right extends Component {
     render() {
         const content = this.props.content;
         const desc = content.desc.map((desc, index) => {
+            if (desc.group) {
+                const groupDetail = desc.detail
+                    ? <button className={styles.detailLink} onClick={() => this.openDetail(desc.detail)}>자세히 보기 <span className={styles.detailArrow}>&#8594;</span></button>
+                    : null;
+                return (
+                    <li key={index} className={styles.descGroup}>
+                        <span>{desc.group}</span>
+                        {groupDetail}
+                    </li>
+                )
+            }
             if (desc.sub.length) {
                 const subs = <ul>{desc.sub.map((sub, index) => <li key={index}>{sub}</li>)}</ul>
+                const detailLink = desc.detail
+                    ? <button className={styles.detailLink} onClick={() => this.openDetail(desc.detail)}>자세히 보기 <span className={styles.detailArrow}>&#8594;</span></button>
+                    : null;
                 return (
-                    <li key={index} className={styles.foldable}>
-                        <details><summary>{desc.main}</summary>{subs}</details>
+                    <li key={index} className={styles.descItem}>
+                        <span className={styles.descTitle}>{desc.main}</span>
+                        {detailLink}
+                        {subs}
                     </li>
                 )
             }
@@ -50,6 +76,9 @@ class Right extends Component {
                 <div className={styles.keywords}>{keywords}</div>
                 <div className={styles.images}>{images}</div>
                 <div className={styles.pdfs}>{pdfs}</div>
+                {this.state.detail && (
+                    <ProjectDetail detail={this.state.detail} close={this.closeDetail} />
+                )}
                 {this.state.hasModal && (
                     <Modal title={content.title} folder={content.folder} images={content.images} index={this.state.index} close={this.controlModal}></Modal>
                 )}

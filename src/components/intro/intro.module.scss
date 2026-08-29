@@ -1,11 +1,36 @@
 @import '../../mixin.module.scss';
 
+.headline {
+    @include font($black, normal, 700, 2.4rem);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+    text-align: left;
+    @include if-mobile {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.paragraph {
+    @include font($darkgray, normal, 300, 1.55rem);
+    line-height: 1.9;
+    word-break: keep-all;      // 한국어 어절 단위 줄바꿈
+    overflow-wrap: break-word;
+    margin-bottom: 1.2rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .profile {
-    @include size(200px, 200px);
-    border-radius: 0%;
+    @include size(210px, 265px); // 증명사진 3:4 세로 비율
+    object-fit: cover;
+    border-radius: 12px;
     @include if-mobile {
         margin: 1rem 0 2rem 0;
     }
     margin: 1rem 0 1rem 2rem;
-    box-shadow: 0 0 5px 3px gray;
+    box-shadow: 0 6px 20px -6px rgba(107, 98, 80, 0.4);
 }

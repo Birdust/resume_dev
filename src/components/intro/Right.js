@@ -1,15 +1,29 @@
 import { Component } from 'react';
 import styles from '../../styles.module.scss';
+import intro from './intro.module.scss';
 
 class Right extends Component {
     render() {
         const content = this.props.content;
-        console.log(content.intro);
-        const intro = content.intro.split("\n\n").map((line, index) => <p key={index}>{line}<br /></p>);
+        const paragraphs = content.intro
+            .split(/\n[ \t]*\n/)
+            .map((block) => block.trim())
+            .filter((block) => block.length)
+            .map((block, index) => {
+                const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+                return (
+                    <p key={index} className={intro.paragraph}>
+                        {lines.map((line, j) => (
+                            <span key={j}>{line}{j < lines.length - 1 && <br />}</span>
+                        ))}
+                    </p>
+                );
+            });
 
         return (
             <div className={styles.Right}>
-                {intro}
+                {content.headline && <h3 className={intro.headline}>{content.headline}</h3>}
+                {paragraphs}
             </div>
         );
     }
