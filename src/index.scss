@@ -62,10 +62,38 @@ embed {
     position: absolute;
     @include size(100%, 100%);
 }
-/* PDF/인쇄 출력용 — 자세히 보기 버튼 등 인터랙션 요소 숨김 */
+/* PDF/인쇄 출력용 — PC 레이아웃 고정(브레이크포인트 1023px 초과 폭), 버튼 숨김 */
+@page {
+  size: 420mm 594mm;
+  margin: 16mm 22mm;
+}
 @media print {
   button {
     display: none !important;
+  }
+  /* 인쇄 시 미디어쿼리가 모바일로 평가되는 문제 — 데스크톱 2단 레이아웃을 직접 강제 */
+  div[class*="Resume"] {
+    width: 100% !important;
+  }
+  div[class*="Wrapper"] > div[class*="Left"] {
+    width: 28% !important;
+    text-align: left !important;
+    padding-right: 5% !important;
+  }
+  div[class*="Wrapper"] > div[class*="Right"] {
+    width: 72% !important;
+  }
+  div[class*="Right"] [class*="keywords"],
+  div[class*="Right"] [class*="images"],
+  div[class*="Right"] [class*="pdfs"] {
+    justify-content: initial !important;
+  }
+  div[class*="Right"] [class*="desc"] {
+    margin-top: 0 !important;
+  }
+  div[class*="Wrapper"] > div[class*="Right"] > h4,
+  div[class*="Wrapper"] > div[class*="Right"] > h5 {
+    text-align: left !important;
   }
   * {
     -webkit-print-color-adjust: exact;
@@ -76,5 +104,13 @@ embed {
   }
   h3, h4 {
     break-after: avoid;
+  }
+  /* 그룹 제목이 항목과 분리되어 페이지 끝에 남지 않게 */
+  li[class*="descGroup"] {
+    break-after: avoid;
+  }
+  /* 항목(소제목+불릿)은 한 덩어리로 */
+  li[class*="descItem"] {
+    break-inside: avoid;
   }
 }
