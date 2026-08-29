@@ -6,6 +6,33 @@
     padding: 60px 0 20px 0;
     line-height: 2;
     .Container {
+                .Achievements {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.2rem;
+                    @include if-mobile {
+                        grid-template-columns: 1fr;
+                    }
+                    .achievementCard {
+                        border: 1px solid $accent-line;
+                        border-radius: 8px;
+                        background-color: $accent-soft;
+                        padding: 1.6rem 1.8rem;
+                        .achievementMetric {
+                            @include font($accent-dark, normal, 700, 2.1rem);
+                            letter-spacing: 0.01em;
+                        }
+                        .achievementTitle {
+                            margin-top: 0.5rem;
+                            @include font($black, normal, 600, 1.5rem);
+                        }
+                        .achievementDesc {
+                            margin-top: 0.5rem;
+                            @include font($darkgray, normal, 300, 1.35rem);
+                            line-height: 1.6;
+                        }
+                    }
+                }
         .Subject {
             position: relative;
             border-bottom: 1px solid $silver;
@@ -58,6 +85,18 @@
                             padding-inline-start: 20px;
                         }
                         padding-inline-start: 40px;
+                        .descGroup {
+                            list-style: none;
+                            margin: 1.6rem 0 0.8rem -20px;
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                            span {
+                                @include font($black, normal, 700, 1.7rem);
+                                border-bottom: 2px solid $accent-line;
+                                padding-bottom: 0.2rem;
+                            }
+                        }
                         .descItem {
                             margin-bottom: 0.7rem;
                             .descTitle {

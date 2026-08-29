@@ -22,6 +22,13 @@ class Right extends Component {
     render() {
         const content = this.props.content;
         const desc = content.desc.map((desc, index) => {
+            if (desc.group) {
+                return (
+                    <li key={index} className={styles.descGroup}>
+                        <span>{desc.group}</span>
+                    </li>
+                )
+            }
             if (desc.sub.length) {
                 const subs = <ul>{desc.sub.map((sub, index) => <li key={index}>{sub}</li>)}</ul>
                 return (
