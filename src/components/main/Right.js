@@ -4,6 +4,8 @@ import Modal from '../modal/Modal';
 import ProjectDetail from '../projectdetail/ProjectDetail';
 import styles from '../../styles.module.scss';
 
+const SHOW_DETAILS = window.location.hostname === "localhost";
+
 class Right extends Component {
     constructor(props) {
         super(props);
@@ -33,7 +35,7 @@ class Right extends Component {
         const content = this.props.content;
         const desc = content.desc.map((desc, index) => {
             if (desc.group) {
-                const groupDetail = desc.detail
+                const groupDetail = SHOW_DETAILS && desc.detail
                     ? <button className={styles.detailLink} onClick={() => this.openDetail(desc.detail)}>자세히 보기 <span className={styles.detailArrow}>&#8594;</span></button>
                     : null;
                 return (
@@ -45,7 +47,7 @@ class Right extends Component {
             }
             if (desc.sub.length) {
                 const subs = <ul>{desc.sub.map((sub, index) => <li key={index}>{sub}</li>)}</ul>
-                const detailLink = desc.detail
+                const detailLink = SHOW_DETAILS && desc.detail
                     ? <button className={styles.detailLink} onClick={() => this.openDetail(desc.detail)}>자세히 보기 <span className={styles.detailArrow}>&#8594;</span></button>
                     : null;
                 return (
