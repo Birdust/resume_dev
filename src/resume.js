@@ -160,7 +160,7 @@ export const experience = {
                     "A/B 비교로 검증해 동시 40건 중 33건 유실을 0건으로 제거",
                     "Prometheus·Grafana·AlertManager 기반 실시간 모니터링·알람 인프라 구축",
                 ] },
-                { main: "자연어 질의 기반 대화형 AI 구축", sub: [
+                { main: "자연어 질의 기반 대화형 AI 구축", detail: details.conversationalAi, sub: [
                     "MCP와 LLM Function Calling 기반 한국어 자연어 질의 시스템 개발",
                     "운영 데이터 조회·CSV 추출·신호 연동 진단 등 조회 도구 구현",
                     "신호계획과 실제 운영 이력을 대조해 연동 상태를 진단하고 개선안을 제안하는 AI 서비스로 확장",
