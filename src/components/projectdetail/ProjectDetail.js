@@ -64,6 +64,12 @@ class ProjectDetail extends Component {
                         </tbody>
                     </table>
                 )}
+                {section.image && (
+                    <figure className={styles.detailFigure}>
+                        <img src={`${process.env.PUBLIC_URL}/${section.image}`} alt={section.caption || section.heading} />
+                        {section.caption && <figcaption>{section.caption}</figcaption>}
+                    </figure>
+                )}
                 {section.takeaway && <p className={styles.detailTakeaway}>{section.takeaway}</p>}
             </section>
         );

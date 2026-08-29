@@ -348,6 +348,19 @@
         th { background: #f4f2ef; font-weight: 700; color: #333; }
         td { color: #555; }
     }
+    .detailFigure {
+        margin: 1rem 0;
+        img {
+            max-width: 100%;
+            border: 1px solid #e6e1d8;
+            border-radius: 8px;
+        }
+        figcaption {
+            margin-top: 0.4rem;
+            font-size: 1.2rem;
+            color: #8a8478;
+        }
+    }
     .detailTakeaway {
         margin-top: 1rem;
         font-size: 1.45rem;
