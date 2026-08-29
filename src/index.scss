@@ -62,3 +62,19 @@ embed {
     position: absolute;
     @include size(100%, 100%);
 }
+/* PDF/인쇄 출력용 — 자세히 보기 버튼 등 인터랙션 요소 숨김 */
+@media print {
+  button {
+    display: none !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  section, li {
+    break-inside: avoid;
+  }
+  h3, h4 {
+    break-after: avoid;
+  }
+}
