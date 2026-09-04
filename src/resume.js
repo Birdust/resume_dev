@@ -162,6 +162,7 @@ export const experience = {
                 ] },
                 { main: "자연어 질의 기반 대화형 AI 구축", detail: details.conversationalAi, sub: [
                     "MCP와 LLM Function Calling 기반 한국어 자연어 질의 시스템 개발",
+                    "오픈소스 모델을 경량화해 폐쇄망 관제 서버에 실적용",
                     "운영 데이터 조회·CSV 추출·신호 연동 진단 등 조회 도구 구현",
                     "신호계획과 실제 운영 이력을 대조해 연동 상태를 진단하고 개선안을 제안하는 AI 서비스로 확장",
                     "AI가 운영 데이터에 영향을 줄 수 없도록 권한·검증·인증을 겹친 다층 보안 체계 설계",
@@ -169,7 +170,7 @@ export const experience = {
                 { group: "성남 교통관제 시스템 고도화", detail: details.seongnamUpgrade },
                 { main: "관제센터 API 서버 Spring Boot 전환", sub: [
                     "관제센터 시스템의 기술 스택 단일화를 위해 운영 중인 NestJS API를 Java Spring Boot로 재구현",
-                    "전환 전후 응답을 자동 대조하는 검증 도구를 구축해 일치율을 26%에서 97%로 정렬",
+                    "두 서버에 같은 요청을 보내 응답을 자동 대조하는 검증 도구를 구축해 응답 일치율을 26%에서 97%로 높인 뒤 무중단 전환",
                     "기술 스택을 현대화하고 비밀번호 해시 무인증 노출 등 잠재 결함 발견·수정",
                 ] },
                 { group: "영상 AI 신호 시스템 개발", detail: details.visionAi },
@@ -214,7 +215,7 @@ export const experience = {
                     "PC와 네트워크 없이 USB만으로 안전하게 업데이트하고 실패하면 자동 롤백되도록 설계",
                 ] },
                 { main: "선로전환기 전환력 측정기", sub: [
-                    "계측보드와 시리얼 통신을 구현하고 CRC로 전송 오류 검출",
+                    "계측보드 데이터를 수신하는 시리얼 통신을 Python으로 구현하고 CRC로 전송 오류 검출",
                     "센서 원시 신호를 kgf 단위 실제 전환력 값으로 보정하고 장비 모델별 보정값을 DB로 관리",
                     "초당 100회 수집되는 데이터가 지연되지 않도록 수신·저장·전송을 병렬 프로세스로 분리",
                     "로그 조회·설정 관리 API 개발과 라즈베리파이 현장 배포 구성",
@@ -237,6 +238,7 @@ export const experience = {
                     "세그멘테이션 결과를 OpenCV로 변환해 그리드로 나누고 그리드별 안정성 점수로 착륙 후보 선정",
                     "포인트 클라우드로 착륙 후보 지점의 지형을 확인해 안전한 평탄 영역 도출",
                     "항공 영상 특성을 반영한 그리드 분할로 실시간 처리를 최적화해 최종 착륙 지점 도출",
+                    "착륙 영역 탐지 정확도 95% 이상 달성, 한국통신학회 학부논문 발표",
                 ] },
             ],
             keywords: ["Semantic Segmentation", "OpenCV", "Point Cloud", "ROS", "Gazebo", "Jetson Xavier NX", "Python"],
@@ -384,6 +386,6 @@ export const language = {
     ],
 };
 
-export const footer = { updated: "2026. 08. 29." };
+export const footer = { updated: "2026. 09. 05." };
 
 export const main = [research, experience, awards, education, certificate, language] // projects 잠시 주석처리
