@@ -11,7 +11,7 @@ export const header = {
 export const intro = {
     subject: "Introduce",
     profile: "profile2.jpg",
-    headline: "깊이 파고들어 오래가는 시스템을 만드는 개발자",
+    headline: "경계를 가리지 않고 끝까지 검증하는 개발자",
     intro: `
     교통관제·철도 시스템을 개발하며 백엔드 서버부터 데이터베이스와 현장 장비까지 연결되는 시스템을 직접 구축하고 운영해 왔습니다.
     Java/Spring Boot, TypeScript/NestJS, Python을 기반으로 REST API와 실시간 통신 시스템을 개발하고
